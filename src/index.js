@@ -10,7 +10,7 @@ notice({text: 'Введите запрос',
        delay:2000});
 
 let inputValue = ''
-let page
+let page=1
 
 const markup = (data) => {
     const pictureCard = galleryCard(data)
@@ -35,7 +35,9 @@ const searchPicture = (event) => {
                     text: `Введите корректный запрос!`,
                     delay: 1500
             });
-            refs.buttonLoad.classList.add('is-hidden')}
+                refs.buttonLoad.classList.add('is-hidden')
+            };
+            
         })
     refs.gallery.innerHTML = ""
     //form.reset() 
@@ -57,6 +59,7 @@ const loadMorePicture = (event) => {
             }), 500);
                
         })
+   
 }
    
 refs.searchForm.addEventListener('submit', searchPicture)
